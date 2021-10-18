@@ -1,0 +1,119 @@
+body {
+  background: #222;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px 25px 0;
+}
+
+.slider__heading {
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #eaeaea;
+}
+
+.slider__content {
+  max-width: 1000px;
+  overflow: hidden;
+  border: 2px solid #eaeaea;
+}
+
+.slider__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.slider__taps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.slider__btn {
+  min-width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.slider__btn svg path {
+  fill: #eaeaea;
+}
+
+.slider__btn:hover {
+  border-color: #f00;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.slider__btn:hover svg path {
+  fill: #f00;
+}
+
+.slider__items {
+  height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.slider__items .item {
+  width: 40px;
+  height: 5px;
+  cursor: pointer;
+  background: #eaeaea;
+  -webkit-transition: height .3s ease;
+  transition: height .3s ease;
+}
+
+.slider__items .item:hover {
+  height: 10px;
+}
+
+.slider__items .item-switch {
+  background: #f00;
+}
+/*# sourceMappingURL=style.css.map */

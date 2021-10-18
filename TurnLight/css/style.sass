@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap')
+    
+body
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 200px
+    font-family: 'Work Sans', sans-serif
+    font-weight: 400
+    font-size: 30px
+    color: #222222
+    background: #050801
+    transition: background .5s ease
+
+.heading
+    font-weight: 700
+    font-size: 50px
+
+#hex-code
+    margin: 40px 0
+    font-size: 80px
+
+.box
+    display: flex
+    gap: 50px
+
+.btn
+    padding: 15px 40px
+    font-size: 40px
+    border: 2px solid #222222
+    color: #222222
+    background: transparent
+    transition: all .5s ease
+    &:nth-child(1):hover
+        border-color: #63f403
+        color: #050801
+        background: #63f403
+        box-shadow: 0 0 5px #63f403, 0 0 25px #63f403, 0 0 50px #63f403, 0 0 200px #63f403
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005)
+    &:nth-child(2):hover
+        border-color: #f40303
+        color: #050801
+        background: #f40303
+        box-shadow: 0 0 5px #f40303, 0 0 25px #f40303, 0 0 50px #f40303, 0 0 200px #f40303
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005)

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.box__small {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#box__big {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.small__img {
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.border-color {
+    border-color: #f00;
+}

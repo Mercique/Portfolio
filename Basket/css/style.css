@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    padding: 50px;
+    padding-left: calc(50% - 720px);
+    padding-right: calc(50% - 720px);
+}
+
+#product__card {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__price {
+    margin: 10px 0;
+}
+
+.card__link:hover {
+    color: #f00;
+}
+
+.basket {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: #222222;
+    background: #f5f3f3;
+}
+
+.basket__title {
+    margin-bottom: 30px;
+}
+
+#basket__goods {
+    height: 408px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+}
+
+.check__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.goods {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.basket__line {
+    height: 2px;
+    margin-top: auto;
+    background: #222;
+}
+
+#basket__count, #basket__total {
+    font-size: 30px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+#basket__count {
+    padding-top: 15px;
+}
+
+.basket__btn {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    padding: 12px 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    flex: 1;
+    border: none;
+    color: #fff;
+    background: #F16D7F;
+}
+
+.button__disabled {
+    cursor: not-allowed;
+    opacity: .4;
+}
+
+@media (max-width: 1470px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

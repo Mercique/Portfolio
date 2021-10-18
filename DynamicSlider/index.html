@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="slider">
+        <h1 class="slider__heading">FIRST SLIDER</h1>
+        <div class="slider__content">
+            <div class="slider__line">
+                <img src="img/1.jpg" alt="picture-1">
+                <img src="img/2.jpg" alt="picture-2">
+                <img src="img/3.jpg" alt="picture-3">
+                <img src="img/4.jpg" alt="picture-4">
+                <img src="img/5.jpg" alt="picture-5">
+            </div>
+        </div>
+        <div class="slider__taps">
+            <button type="button" class="slider__btn" id="prev">
+                <svg width="22" height="32" viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.37236 14.3005L14.9681 0.70478C15.9078 -0.234927 17.4273 -0.234927 18.357 0.70478L20.6163 2.96407C21.556 3.90378 21.556 5.42331 20.6163 6.35301L10.9894 16L20.6263 25.637C21.566 26.5767 21.566 28.0962 20.6263 29.0259L18.367 31.2952C17.4273 32.2349 15.9078 32.2349 14.9781 31.2952L1.38236 17.6995C0.432652 16.7598 0.432652 15.2402 1.37236 14.3005Z" fill="black"/>
+                </svg>
+            </button>
+            <div class="slider__items">
+                <div class="item item-switch"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <button type="button" class="slider__btn" id="next">
+                <svg width="22" height="32" viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.6226 17.6995L7.02684 31.2952C6.08714 32.2349 4.56761 32.2349 3.6379 31.2952L1.37861 29.0359C0.438901 28.0962 0.438901 26.5767 1.37861 25.647L11.0156 16.01L1.37861 6.37301C0.438901 5.4333 0.438901 3.91378 1.37861 2.98407L3.6279 0.70478C4.56761 -0.234927 6.08714 -0.234927 7.01685 0.70478L20.6126 14.3005C21.5623 15.2402 21.5623 16.7598 20.6226 17.6995Z" fill="black"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
