@@ -2,18 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Snake</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="wrap">
-    <div id="score">Счет: 0</div>
-    <div id="snake-field"></div>
-    <div class="buttons">
-        <div id="snake-start">Старт</div>
-        <div id="snake-renew">Новая игра</div>
+    <div class="game">
+        <div class="game__header">
+            <h1 class="game__header-title">Snake Game</h1>
+            <p id="game__header-counter">0</p>
+        </div>
+        <div id="game__field"></div> <!-- Game field -->
+        <div class="game__btn">
+            <button type="button" id="game__btn-start">Старт</button>
+            <div class="game__level">
+                <div class="level">1</div>
+                <div class="level">2</div>
+                <div class="level">3</div>
+            </div>
+            <button type="button" id="game__btn-renew">Новая игра</button>
+        </div>
+        <p id="level__text">Выберите сложность игры ЗМЕЙКА!</p>
     </div>
-</div>
+
+    <script src="js/realize.js"></script>
 </body>
 </html>

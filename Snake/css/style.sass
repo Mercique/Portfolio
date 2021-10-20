@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap')
+    
+body
+    padding-top: 20px
+    font-family: 'Lato', sans-serif
+    font-weight: 400
+    font-size: 20px
+    background: #353336
+
+.game
+    display: flex
+    flex-direction: column
+    align-items: center
+    filter: drop-shadow(0px 0px 30px #000000)
+    &__header
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 300px
+        padding: 10px
+        text-align: center
+        border-radius: 20px 20px 0 0
+        background: #161618
+        &-title, #game__header-counter
+            font-weight: 700
+            font-size: 30px
+            color: #FA0556
+        #game__header-counter
+            width: 100px
+            margin-top: 10px
+            background: #111
+    #game__field
+        padding: 15px
+        border-radius: 20px
+        background: #161618
+    &__btn
+        display: flex
+        align-items: center
+        gap: 30px
+        margin-top: 20px
+        .game__level
+            display: flex
+        .level
+            width: 40px
+            height: 40px
+            display: flex
+            align-items: center
+            justify-content: center
+            cursor: pointer
+            font-weight: 700
+            border: 1px solid #000
+            transition: background .3s ease
+            &:hover
+                background: #FA0556
+        .level-checked
+            background: #FA0556
+        #game__btn-start, #game__btn-renew
+            width: 150px
+            padding: 10px 20px
+            border: 2px solid #161618
+            color: #161618
+            background: transparent
+            transition: all .5s ease
+        #game__btn-start:not([disabled]):hover
+            border-color: #63f403
+            color: #000
+            background: #63f403
+            box-shadow: 0 0 5px #63f403, 0 0 25px #63f403, 0 0 50px #63f403, 0 0 200px #63f403
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005)
+        #game__btn-renew:not([disabled]):hover
+            border-color: #FA0556
+            color: #000
+            background: #FA0556
+            box-shadow: 0 0 5px #FA0556, 0 0 25px #FA0556, 0 0 50px #FA0556, 0 0 200px #FA0556
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005)
+        .disabled
+            cursor: not-allowed
+            opacity: .5
+    #level__text
+        margin-top: 20px
+        font-weight: 700
+        color: #FA0556
+
+.snake__field
+    border-collapse: collapse
+    &-row
+        display: flex
+    &-cell
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 20px
+        height: 20px
+        &::after
+            content: ''
+            display: block
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background: #525053
+    .snake
+        background: #FA0556
+        &::after
+            content: ''
+            display: block
+            width: 20px
+            height: 20px
+            border-radius: 0
+            background: #FA0556
+    .food::after
+        content: ''
+        display: block
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        background: #FA0556
+    .barrier
+        background: #0ff
+        &::after
+            content: ''
+            display: block
+            width: 20px
+            height: 20px
+            border-radius: 0
+            transform: rotate(45deg)
+            background: #0ff
+    .bg
+        background: #0f0
