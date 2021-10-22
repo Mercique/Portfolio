@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #03e9f4;
+  background: #00030a;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20%;
+}
+
+#stopwatch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+#stopwatch > .stopwatch__box {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+#stopwatch > .stopwatch__box > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 100px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+          box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+#stopwatch > .stopwatch__box > p {
+  padding-top: 20px;
+}
+
+.stopwatch__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+
+.stopwatch__buttons button {
+  width: 200px;
+  margin: 30px 0;
+  padding: 5px 0;
+  border-radius: 20px;
+  border: 2px solid #03e9f4;
+  color: #03e9f4;
+  background: transparent;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.stopwatch__buttons button:disabled {
+  opacity: .2;
+  cursor: not-allowed;
+}
+
+.stopwatch__buttons .start:hover {
+  border-color: #0f0;
+  color: #000;
+  background: #0f0;
+  -webkit-box-shadow: 0 0 5px #0f0, 0 0 25px #0f0, 0 0 50px #0f0, 0 0 100px #0f0;
+          box-shadow: 0 0 5px #0f0, 0 0 25px #0f0, 0 0 50px #0f0, 0 0 100px #0f0;
+}
+
+.stopwatch__buttons .start:hover:active {
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+}
+
+.stopwatch__buttons .pause:hover {
+  border-color: #fe0;
+  color: #000;
+  background: #fe0;
+  -webkit-box-shadow: 0 0 5px #fe0, 0 0 25px #fe0, 0 0 50px #fe0, 0 0 100px #fe0;
+          box-shadow: 0 0 5px #fe0, 0 0 25px #fe0, 0 0 50px #fe0, 0 0 100px #fe0;
+}
+
+.stopwatch__buttons .pause:hover:active {
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+}
+
+.stopwatch__buttons .stop:hover {
+  border-color: #f00;
+  color: #000;
+  background: #f00;
+  -webkit-box-shadow: 0 0 5px #f00, 0 0 25px #f00, 0 0 50px #f00, 0 0 100px #f00;
+          box-shadow: 0 0 5px #f00, 0 0 25px #f00, 0 0 50px #f00, 0 0 100px #f00;
+}
+
+.stopwatch__buttons .stop:hover:active {
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+}
+
+.stopwatch__buttons .circle:hover {
+  border-color: #00f;
+  color: #000;
+  background: #00f;
+  -webkit-box-shadow: 0 0 5px #00f, 0 0 25px #00f, 0 0 50px #00f, 0 0 100px #00f;
+          box-shadow: 0 0 5px #00f, 0 0 25px #00f, 0 0 50px #00f, 0 0 100px #00f;
+}
+
+.stopwatch__buttons .circle:hover:active {
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+}
+
+#circle {
+  width: 370px;
+  max-height: 304px;
+  padding: 0 15px;
+  overflow-y: auto;
+}
+
+.circle-text {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.circle-time {
+  margin-left: auto;
+}
+/*# sourceMappingURL=style.css.map */

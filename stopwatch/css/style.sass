@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
+
+body
+    font-family: 'Poppins', sans-serif
+    font-weight: 400
+    font-size: 25px
+    color: #03e9f4
+    background: #00030a
+
+.wrap
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 20%
+
+#stopwatch
+    display: flex
+    gap: 30px
+    & > .stopwatch__box
+        width: 200px
+        display: flex
+        flex-direction: column
+        text-align: center
+        & > div
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: 100px
+            border-radius: 30px
+            box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4
+        & > p
+            padding-top: 20px
+
+.stopwatch__buttons
+    display: flex
+    gap: 40px
+    button
+        width: 200px
+        margin: 30px 0
+        padding: 5px 0
+        border-radius: 20px
+        border: 2px solid #03e9f4
+        color: #03e9f4
+        background: transparent
+        transition: all .3s ease
+        &:disabled
+            opacity: .2
+            cursor: not-allowed
+    .start:hover
+        border-color: #0f0
+        color: #000
+        background: #0f0
+        box-shadow: 0 0 5px #0f0, 0 0 25px #0f0, 0 0 50px #0f0, 0 0 100px #0f0
+        &:active
+            box-shadow: 0 0 0
+    .pause:hover
+        border-color: #fe0
+        color: #000
+        background: #fe0
+        box-shadow: 0 0 5px #fe0, 0 0 25px #fe0, 0 0 50px #fe0, 0 0 100px #fe0
+        &:active
+            box-shadow: 0 0 0
+    .stop:hover
+        border-color: #f00
+        color: #000
+        background: #f00
+        box-shadow: 0 0 5px #f00, 0 0 25px #f00, 0 0 50px #f00, 0 0 100px #f00
+        &:active
+            box-shadow: 0 0 0
+    .circle:hover
+        border-color: #00f
+        color: #000
+        background: #00f
+        box-shadow: 0 0 5px #00f, 0 0 25px #00f, 0 0 50px #00f, 0 0 100px #00f
+        &:active
+            box-shadow: 0 0 0
+
+#circle
+    width: 370px
+    max-height: 304px
+    padding: 0 15px
+    overflow-y: auto
+
+.circle-text
+    width: 100%
+    display: flex
+
+.circle-time
+    margin-left: auto
