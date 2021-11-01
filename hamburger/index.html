@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="burger">
+        <div class="burger__img">
+            <img src="img/burger.png" alt="burger">
+        </div>
+        <div class="burger__box">
+            <h2 class="burger__box-title">Составь свой бургер:</h2>
+            <div class="burger__box-size">
+                <h3 class="option-heading">Выберите размер бургера:</h3>
+                <label class="label-radio">
+                    <input type="radio" name="size" value="big" data-price="270" data-calories="600">
+                    <span>Большой ( 270 &#8381;, 600 калорий )</span>
+                </label>
+                <label class="label-radio">
+                    <input type="radio" name="size" value="small" data-price="80" data-calories="200" checked>
+                    <span class="radio-box">Малый ( 80 &#8381;, 200 калорий )</span>
+                </label>
+            </div>
+            <div class="burger__box-filling">
+                <h3 class="option-heading">Выберите начинку бургера:</h3>
+                <label class="label-radio">
+                    <input type="radio" name="filling" value="cheese" data-price="20" data-calories="30">
+                    <span class="radio-box">Сыр ( 20 &#8381;, 30 калорий )</span>
+                </label>
+                <label class="label-radio">
+                    <input type="radio" name="filling" value="salad" data-price="10" data-calories="10" checked>
+                    <span class="radio-box">Салат ( 10 &#8381;, 10 калорий )</span>
+                </label>
+                <label class="label-radio">
+                    <input type="radio" name="filling" value="potato" data-price="20" data-calories="15">
+                    <span class="radio-box">Картофель ( 20 &#8381;, 15 калорий )</span>
+                </label>
+            </div>
+            <div class="burger__box-option">
+                <h3 class="option-heading">Выберите доп. опцию:</h3>
+                <label class="label-checkbox">
+                    <input type="checkbox" name="option" value="spice" data-price="20" data-calories="0">
+                    <span>Посыпать приправой ( 20 &#8381;, 0 калорий )</span>
+                </label>
+                <label class="label-checkbox">
+                    <input type="checkbox" name="option" value="mayonnaise" data-price="30" data-calories="70">
+                    <span>Полить майонезом ( 30 &#8381;, 70 калорий )</span>
+                </label>
+            </div>
+            <button type="button" id="btn">Собрать бургер</button>
+            <div class="burger__box-total">
+                <p class="total__price">Итоговая стоимость: <span id="price">0</span> &#8381;</p>
+                <p class="total__calories">Кол-во калорий: <span id="calories">0</span> ккал</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

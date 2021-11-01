@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
+
+body
+    display: flex
+    justify-content: center
+    padding: 50px 0
+    font-family: 'Open Sans', sans-serif
+    font-weight: 400
+    font-size: 24px
+    color: #c8c4bd
+    background: #735b4c
+
+.burger
+    width: 1000px
+    display: flex
+    border-radius: 24px
+    background: #3e2b11
+    &__img
+        display: flex
+        align-items: center
+        border-radius: 24px 0 0 24px
+        background: #401c10
+    &__box
+        flex: 1
+        padding: 20px
+        &-title
+            padding-bottom: 10px
+        & > div
+            padding: 10px 0
+            border-top: 1px solid #584530
+    .option-heading
+        padding-bottom: 10px
+    .label-radio
+        display: block
+        input[type="radio"]
+            position: absolute
+            visibility: hidden
+            left: -9999999px
+            &:checked ~ span
+                &::before
+                    border-color: #bf1f00
+                &::after
+                    background: #bf1f00
+        span
+            display: inline-flex
+            align-items: center
+            gap: 20px
+            position: relative
+            font-size: 18px
+            &::before
+                content: ''
+                display: block
+                width: 24px
+                height: 24px
+                border: 2px solid #d7c7b5
+                border-radius: 50%
+                transition: border-color .3s ease
+            &::after
+                content: ''
+                display: block
+                width: 12px
+                height: 12px
+                position: absolute
+                left: 6px
+                border-radius: 50%
+                background: transparent
+                transition: background .3s ease
+    .label-checkbox
+        display: block
+        input[type="checkbox"]
+            position: absolute
+            visibility: hidden
+            left: -9999999px
+            &:checked ~ span
+                &::before
+                    border-color: #bf1f00
+                    background: #bf1f00
+                &::after
+                    color: #eddabf
+        span
+            display: inline-flex
+            align-items: center
+            gap: 20px
+            position: relative
+            font-size: 18px
+            &::before
+                content: ''
+                display: block
+                width: 24px
+                height: 24px
+                border: 2px solid #d7c7b5
+                border-radius: 8px
+                transition: all .3s ease
+            &::after
+                content: '\2713'
+                display: block
+                position: absolute
+                top: 0
+                left: 6px
+                color: transparent
+                transition: color .3s ease
+    #btn
+        width: 100%
+        margin: 15px 0
+        padding: 10px 40px
+        border-radius: 33px
+        color: #eddabf
+        background: #401c10
+        transition: all .3s ease
+        &:hover
+            background: #6c4d3f
+        &:active
+            background: #220200
+    #price, #calories
+        font-size: 28px

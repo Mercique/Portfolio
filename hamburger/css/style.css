@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #c8c4bd;
+  background: #735b4c;
+}
+
+.burger {
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 24px;
+  background: #3e2b11;
+}
+
+.burger__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 24px 0 0 24px;
+  background: #401c10;
+}
+
+.burger__box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+}
+
+.burger__box-title {
+  padding-bottom: 10px;
+}
+
+.burger__box > div {
+  padding: 10px 0;
+  border-top: 1px solid #584530;
+}
+
+.burger .option-heading {
+  padding-bottom: 10px;
+}
+
+.burger .label-radio {
+  display: block;
+}
+
+.burger .label-radio input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+  left: -9999999px;
+}
+
+.burger .label-radio input[type="radio"]:checked ~ span::before {
+  border-color: #bf1f00;
+}
+
+.burger .label-radio input[type="radio"]:checked ~ span::after {
+  background: #bf1f00;
+}
+
+.burger .label-radio span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  position: relative;
+  font-size: 18px;
+}
+
+.burger .label-radio span::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d7c7b5;
+  border-radius: 50%;
+  -webkit-transition: border-color .3s ease;
+  transition: border-color .3s ease;
+}
+
+.burger .label-radio span::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 6px;
+  border-radius: 50%;
+  background: transparent;
+  -webkit-transition: background .3s ease;
+  transition: background .3s ease;
+}
+
+.burger .label-checkbox {
+  display: block;
+}
+
+.burger .label-checkbox input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+  left: -9999999px;
+}
+
+.burger .label-checkbox input[type="checkbox"]:checked ~ span::before {
+  border-color: #bf1f00;
+  background: #bf1f00;
+}
+
+.burger .label-checkbox input[type="checkbox"]:checked ~ span::after {
+  color: #eddabf;
+}
+
+.burger .label-checkbox span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  position: relative;
+  font-size: 18px;
+}
+
+.burger .label-checkbox span::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d7c7b5;
+  border-radius: 8px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.burger .label-checkbox span::after {
+  content: '\2713';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 6px;
+  color: transparent;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+}
+
+.burger #btn {
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 40px;
+  border-radius: 33px;
+  color: #eddabf;
+  background: #401c10;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.burger #btn:hover {
+  background: #6c4d3f;
+}
+
+.burger #btn:active {
+  background: #220200;
+}
+
+.burger #price, .burger #calories {
+  font-size: 28px;
+}
+/*# sourceMappingURL=style.css.map */
