@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
+
+body
+    font-family: 'Poppins', sans-serif
+    font-weight: 400
+    font-size: 20px
+
+.wrapper
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    &-top
+        flex: 1
+
+.center
+    padding-left: calc( 50% - 600px )
+    padding-right: calc( 50% - 600px )
+
+.header
+    height: 100px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border: 1px solid #ececec
+    box-shadow: 0 0 10px rgba(0, 0, 0, .16)
+    &__heading
+        font-weight: 700
+        font-size: 30px
+        color: #f16d7f
+    .btn-cart
+        position: relative
+        padding: 5px 20px
+        border-radius: 20px
+        border: 2px solid #f16d7f
+        color: #f16d7f
+        background: #fff
+        &:hover
+            color: #fff
+            background: #f16d7f
+        &:active
+            top: 1px
+            border-color: #94434e
+            background: #94434e
+
+.main
+    padding-top: 30px
+    padding-bottom: 30px
+    .products
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    .product-item
+        width: 215px
+        padding: 0 15px 15px
+        border-radius: 10px
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, .16)
+    .item-heading
+        margin-top: 10px
+    .item-price
+        margin: 10px 0 20px
+    .buy-btn
+        width: 100%
+        position: relative
+        border-top: 2px solid #eee
+        border-left: 2px solid #eee
+        border-right: 2px solid #555
+        border-bottom: 2px solid #555
+        color: #fff
+        background: #f16d7f
+        &:hover
+            background: #f00
+        &:active
+            top: 1px
+            border-color: #555
+            background: #94434e
+
+.footer
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #7a7a7a
+    background-color: #e6e6e6
