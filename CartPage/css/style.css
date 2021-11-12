@@ -27,6 +27,10 @@ body {
   padding-right: calc( 50% - 600px);
 }
 
+.close-menu {
+  display: none !important;
+}
+
 .header {
   height: 100px;
   display: -webkit-box;
@@ -46,6 +50,110 @@ body {
 .header__heading {
   font-weight: 700;
   font-size: 30px;
+  color: #f16d7f;
+}
+
+.header__btn {
+  position: relative;
+}
+
+.header .cart {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 57px;
+  right: 0;
+  z-index: 1;
+  padding: 15px;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.16);
+  background: #fff;
+}
+
+.header .cart::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -8px;
+  right: 50px;
+  z-index: 10;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  background: #fff;
+}
+
+.header .cart__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .cart .item-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.header .cart .item-img {
+  width: 100px;
+}
+
+.header .cart span {
+  display: block;
+}
+
+.header .cart #item-del {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background: #e6e6e6;
+}
+
+.header .cart #item-del:hover {
+  background: #f16d7f;
+}
+
+.header .cart #item-del:hover svg path {
+  fill: #fff;
+}
+
+.header .cart #item-del:active {
+  background: #813842;
+}
+
+.header .cart .item-total {
   color: #f16d7f;
 }
 
