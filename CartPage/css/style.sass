@@ -1,23 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap')
 
 body
-    font-family: 'Poppins', sans-serif
+    font-family: 'Open Sans', sans-serif
     font-weight: 400
     font-size: 20px
 
-.wrapper
-    min-height: 100vh
+#app
+    height: 100vh
     display: flex
     flex-direction: column
-    &-top
-        flex: 1
 
 .center
-    padding-left: calc( 50% - 600px )
-    padding-right: calc( 50% - 600px )
-
-.close-menu
-    display: none !important
+    padding-left: calc( 50% - 600px)
+    padding-right: calc( 50% - 600px)
 
 .header
     height: 100px
@@ -26,67 +21,10 @@ body
     justify-content: space-between
     border: 1px solid #ececec
     box-shadow: 0 0 10px rgba(0, 0, 0, .16)
-    &__heading
+    .logo
         font-weight: 700
         font-size: 30px
         color: #f16d7f
-    &__btn
-        position: relative
-    .cart
-        width: 400px
-        display: flex
-        flex-direction: column
-        gap: 15px
-        position: absolute
-        top: 57px
-        right: 0
-        z-index: 1
-        padding: 15px
-        border: 1px solid #ececec
-        border-radius: 10px
-        box-shadow: 0px 5px 8px rgba(0, 0, 0, .16)
-        background: #fff
-        &::before
-            content: ''
-            display: block
-            width: 15px
-            height: 15px
-            position: absolute
-            top: -8px
-            right: 50px
-            z-index: 10
-            transform: rotate(45deg)
-            border-top: 1px solid #ececec
-            border-left: 1px solid #ececec
-            background: #fff
-        &__item
-            display: flex
-            justify-content: space-between
-            align-items: center
-        .item-box
-            display: flex
-            align-items: center
-            gap: 20px
-        .item-img
-            width: 100px
-        span
-            display: block
-        #item-del
-            width: 40px
-            height: 40px
-            display: flex
-            align-items: center
-            justify-content: center
-            border-radius: 50%
-            background: #e6e6e6
-            &:hover
-                background: #f16d7f
-                svg path
-                    fill: #fff
-            &:active
-                background: #813842
-        .item-total
-            color: #f16d7f
     .btn-cart
         position: relative
         padding: 5px 20px
@@ -101,46 +39,125 @@ body
             top: 1px
             border-color: #94434e
             background: #94434e
+    .btn-cart, .logo
+        align-self: center
 
-.main
-    padding-top: 30px
-    padding-bottom: 30px
-    .products
-        display: flex
-        justify-content: space-between
-        flex-wrap: wrap
+.products
+    display: flex
+    justify-content: space-around
+    padding: 40px 80px
     .product-item
-        width: 215px
-        padding: 0 15px 15px
+        display: flex
+        flex-direction: column
+        border-radius: 5px
+        overflow: hidden
+        margin: 20px 0
+        padding: 15px
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, .16)
+    .desc
+        padding-top: 20px
+    p
+        margin: 10px 0 20px
+
+.cart
+    position: relative
+    .cart-block
+        width: 370px
+        padding: 20px
+        position: absolute
+        top: 130%
+        right: 0
+        border-radius: 5px
+        border: 1px solid #ececec
         border-radius: 10px
         box-shadow: 0px 5px 8px rgba(0, 0, 0, .16)
-    .item-heading
-        margin-top: 10px
-    .item-price
-        margin: 10px 0 20px
-    .buy-btn
-        width: 100%
-        position: relative
-        border-top: 2px solid #eee
-        border-left: 2px solid #eee
-        border-right: 2px solid #555
-        border-bottom: 2px solid #555
-        color: #fff
-        background: #f16d7f
-        &:hover
-            background: #f00
-        &:active
-            top: 1px
-            border-color: #555
-            background: #94434e
-    .products__total
-        margin-top: 20px
+        background: #fff
+        &::before
+            content: ''
+            width: 15px
+            height: 15px
+            position: absolute
+            top: -8px
+            right: 53px
+            transform: rotate(45deg)
+            border-left: 1px solid #ececec
+            border-top: 1px solid #ececec
+            background: #fff
+    .cart-item 
+        display: flex
+        justify-content: space-between
+        &:not(:last-child)
+            margin-bottom: 20px
+        img
+            width: 100px
+            height: 100px
+    .product-bio
+        display: flex
+        gap: 10px
+    .product-single-price
+        color: #474747
+        font-size: 0.5em
+    .product-desc
+        max-width: 150px
+    .product-quantity 
+        margin-top: 15px
+        font-size: 0.75em
+    .right-block
+        text-align: right
+
+.search-form
+    position: relative
+    margin-right: 50px
+    display: inline-block
+    .search-field 
+        box-sizing: border-box
+        width: 200px
+        color: #000
+        padding: 10px
+        background-color: transparent
+        border: none
+        border-bottom: 2px solid #000
+    .btn-search 
+        background-color: transparent
+        border: none
+        color: #fafafa
+        font-size: 1.2em
+        position: absolute
+        bottom: 5px
+        right: 0
+        cursor: pointer
+
+.btn
+    margin-top: 5px
+    padding: 5px 15px
+    cursor: pointer
+    border: 1px solid transparent
+    border-radius: 5px
+    color: #fff
+    background-color: #f16d7f
+    &:hover
+        background: #da8b96
+    &:active
+        top: 1px
+        background: #94434e
+
+.buy-btn
+    width: 100%
+
+.invisible
+    display: none !important
+
+.products_empty 
+    margin: 80px
+    text-align: center
+    font-size: 1.5em
 
 .footer
     height: 80px
     display: flex
     align-items: center
     justify-content: center
+    margin-top: auto
     color: #7a7a7a
     background-color: #e6e6e6
 
@@ -148,9 +165,3 @@ body
     .center
         padding-left: 25px
         padding-right: 25px
-
-@media (max-width: 1140px)
-    .main
-        .products
-            justify-content: center
-            gap: 25px
