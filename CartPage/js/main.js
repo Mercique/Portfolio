@@ -10,15 +10,14 @@ const app = new Vue({
         searchLine: '',
         filtered: [],
         isVisibleCart: false,
-        cart: []
+        cart: [],
+        error: false
     },
     methods: {
         getJson(url) {
             return fetch(url)
                 .then(result => result.json())
-                .catch(error => {
-                    console.log(error);
-                })
+                .catch(error => console.log(error))
         },
         addProduct(product) {
             let productId = product.id_product;
@@ -41,6 +40,7 @@ const app = new Vue({
         },
         filterGoods() {
             let regexp = new RegExp(this.searchLine, 'i');
+
             this.filtered = this.products.filter(product => regexp.test(product.product_name));
             
             this.products.forEach(el => {
