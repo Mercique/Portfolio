@@ -42,15 +42,6 @@ const app = new Vue({
             let regexp = new RegExp(this.searchLine, 'i');
 
             this.filtered = this.products.filter(product => regexp.test(product.product_name));
-            
-            this.products.forEach(el => {
-                const card = document.querySelector(`.product-item[data-id="${el.id_product}"]`);
-                if (!this.filtered.includes(el)) {
-                    card.classList.add('invisible');
-                } else {
-                    card.classList.remove('invisible');
-                }
-            })
         },
     },
     mounted() { // "window.onload"

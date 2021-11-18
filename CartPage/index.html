@@ -16,7 +16,7 @@
                 <search></search>
                 <button class="btn-cart" type="button" @click="isVisibleCart=!isVisibleCart">Корзина</button>
                 <div class="cart-block" :class="{invisible: !isVisibleCart}" v-if="cart.length">
-                    <div class="cart-item" v-for="product of cart" :key="product.id_product" :data-id="product.id_product">
+                    <div class="cart-item" v-for="product of cart" :key="product.id_product">
                         <div class="product-bio">
                             <img :src="imgCatalog" alt="Some image">
                             <div class="product-desc">
@@ -37,7 +37,7 @@
 
         <main class="main center">
             <div class="products" v-if="products.length">
-                <div class="product-item" v-for="product of products" :key="product.id_product" :data-id="product.id_product">
+                <div class="product-item" v-for="product of filtered" :key="product.id_product">
                     <img :src="imgCatalog" alt="Some img">
                     <div class="desc">
                         <h3>{{ product.product_name }}</h3>

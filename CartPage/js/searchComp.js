@@ -11,4 +11,4 @@ Vue.component('search', {
         </button>
     </form>
     `
-})  
+})
