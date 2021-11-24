@@ -103,6 +103,9 @@ body {
 }
 
 .cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
 }
 
@@ -132,6 +135,10 @@ body {
   border-left: 1px solid #ececec;
   border-top: 1px solid #ececec;
   background: #fff;
+}
+
+.cart .cart-text-null {
+  text-align: center;
 }
 
 .cart .cart-item {
@@ -188,7 +195,7 @@ body {
           box-sizing: border-box;
   width: 200px;
   color: #000;
-  padding: 10px;
+  padding: 5px;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #000;

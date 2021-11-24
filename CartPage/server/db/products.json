@@ -1,0 +1,26 @@
+[
+  {
+    "id_product": 124,
+    "img": "img/keyboard.jpg",
+    "product_name": "Клавиатура",
+    "price": 1600
+  },
+  {
+    "id_product": 457,
+    "img": "img/gamepad.jpg",
+    "product_name": "Геймпад",
+    "price": 3000
+  },
+  {
+    "id_product": 123,
+    "img": "img/notebook.jpg",
+    "product_name": "Ноутбук",
+    "price": 45600
+  },
+  {
+    "id_product": 456,
+    "img": "img/mouse.jpg",
+    "product_name": "Мышка",
+    "price": 1000
+  }
+]
