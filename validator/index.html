@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="heading">Validate form</h1>
+    <form action="#" class="form" id="myform">
+        <div class="form__item">
+            <label class="form__item-label" for="name">Your name</label>
+            <input class="form__item-input" type="text" name="name" id="name">
+        </div>
+        <div class="form__item">
+            <label class="form__item-label" for="phone">Your phone</label>
+            <input class="form__item-input" type="tel" name="phone" id="phone">
+        </div>
+        <div class="form__item">
+            <label class="form__item-label" for="email">Your email</label>
+            <input class="form__item-input" type="email" name="email" id="email">
+        </div>
+        <div class="form__btn">
+            <button id="btn">Submit</button>
+        </div>
+    </form>
+
+    <script src="js/main.js"></script>
+    <script>
+        window.onload = () => {
+            document.getElementById('myform').addEventListener('submit', e => {
+                let valid = new Validator('myform');
+                if(!valid.valid){
+                    e.preventDefault();
+                }
+            })
+        }
+    </script>
+</body>
+</html>

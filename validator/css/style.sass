@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap')
+$bgcolor: #282828
+$bordercolor: #B5BBC2
+
+*,
+*::before,
+*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 100px
+    font-family: "Open sans", sans-serif
+    color: #B5BBC2
+    background: $bgcolor
+
+h1
+    margin-bottom: 40px
+    font-size: 50px
+
+.form
+    width: 335px
+    display: flex
+    flex-direction: column
+    gap: 45px
+    &__item
+        position: relative
+        &-label
+            padding: 0 10px
+            position: absolute
+            top: -12px
+            left: 14px
+            font-size: 15px
+            background: $bgcolor
+        &-input
+            width: 100%
+            padding: 12px
+            outline: none
+            font-family: "Open sans", sans-serif
+            font-size: 20px
+            border: 2px solid $bordercolor
+            border-radius: 10px
+            color: #B5BBC2
+            background: $bgcolor
+            transition: border .3s ease
+            &:hover
+                border: 2px solid #fff
+            &:active, &:focus
+                border: 2px solid #ae00ff
+    &__btn
+        #btn
+            padding: 10px 35px
+            font-family: "Open sans", sans-serif
+            font-weight: 700
+            cursor: pointer
+            border-radius: 10px
+            border: 2px solid $bordercolor
+            color: #B5BBC2
+            background: $bgcolor
+            transition: background .2s ease
+            &:hover
+                background: #838383
+            &:active
+                position: relative
+                top: 1px
+                background: #121212
+
+.error-msg
+    color: #D11156
+    margin: 10px 0
+
+.invalid
+    border: 2px solid #D11156 !important
+
+.valid
+    border: 2px solid #3AFF95 !important
