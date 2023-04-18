@@ -12,28 +12,8 @@ const matrix = [
 ];
 
 const gameInit = () => {
-  // addNumMatrix();
-  // addNumMatrix();
-
-  matrix[0][0] = 2;
-  matrix[0][1] = 4;
-  matrix[0][2] = 0;
-  matrix[0][3] = 0;
-
-  matrix[1][0] = 2;
-  matrix[1][1] = 0;
-  matrix[1][2] = 8;
-  matrix[1][3] = 0;
-
-  matrix[2][0] = 0;
-  matrix[2][1] = 2;
-  matrix[2][2] = 8;
-  matrix[2][3] = 0;
-
-  matrix[3][0] = 4;
-  matrix[3][1] = 2;
-  matrix[3][2] = 0;
-  matrix[3][3] = 0;
+  addNumMatrix();
+  addNumMatrix();
 
   draftMatrix(game);
 
@@ -47,6 +27,10 @@ const draftMatrix = (field) => {
 
       cell.className = `app__game-cell cell-${i}-${j}`;
       field.appendChild(cell);
+
+      if (matrix[i][j] === '0') {
+        matrix[i][j] = 0;
+      }
 
       if (matrix[i][j] !== 0) {
         cell.innerHTML = getCellNum(matrix[i][j]);
@@ -86,25 +70,33 @@ const updateData = () => {
   timeout = setTimeout(() => {
     game.innerHTML = "";
     draftMatrix(game);
-  }, 1000);
+  }, 100);
 
   () => clearTimeout(timeout);
 };
 
-const changeDirection = (e) => {
-  const cellNums = [];
-  let checkTap = false;
+const getCollectionNums = (key) => {
+  const collection = [];
 
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix.length; j++) {
-      if (matrix[j][i] !== 0) {
-        const num = document.querySelector(`.cell-${j}-${i}`);
+      let left = key === "ArrowUp" || "ArrowDown" ? i : j;
+      let right = key === "ArrowLeft" || "ArrowRight" ? j : i;
 
-        cellNums.push(num);
+      if (matrix[left][right] !== 0) {
+        const num = document.querySelector(`.cell-${left}-${right}`);
+
+        collection.push(num);
       }
     }
   }
 
+  return collection;
+};
+
+const changeDirection = (e) => {
+  const cellNums = getCollectionNums(e.code);
+  let checkTap = false;
 
   switch (e.key) {
     case "ArrowUp": {
@@ -117,14 +109,16 @@ const changeDirection = (e) => {
         while (x > 0) {
           x--;
 
-          if (matrix[x][y] === 0) {
+          if (matrix[x][y] == 0) {
+            let checkLastSum = matrix[x][y];
             matrix[x][y] = matrix[x + 1][y];
             matrix[x + 1][y] = 0;
             positionNum -= 115;
             checkTap = true;
+            if (checkLastSum) break;
           } else if (matrix[x][y] === matrix[x + 1][y]) {
             matrix[x][y] *= 2;
-            matrix[x + 1][y] = 0;
+            matrix[x + 1][y] = '0';
             positionNum -= 115;
             checkTap = true;
             break;
@@ -183,9 +177,80 @@ const changeDirection = (e) => {
       break;
     }
     case "ArrowLeft": {
+      for (let i = 0; i < cellNums.length; i++) {
+        let x = +cellNums[i].classList[1].split("-")[1];
+        let y = +cellNums[i].classList[1].split("-")[2];
+        
+        let positionNum = 0;
+
+        while (y > 0) {
+          y--;
+
+          if (matrix[x][y] == 0) {
+            let checkLastSum = matrix[x][y];
+            matrix[x][y] = matrix[x][y + 1];
+            matrix[x][y + 1] = 0;
+            positionNum -= 115;
+            checkTap = true;
+            if (checkLastSum) break;
+          } else if (matrix[x][y] === matrix[x][y + 1]) {
+            matrix[x][y] *= 2;
+            matrix[x][y + 1] = '0';
+            positionNum -= 115;
+            checkTap = true;
+            break;
+          } else {
+            break;
+          }
+        }
+
+        if (positionNum !== 0) {
+          cellNums[i].firstChild.style.left = `${positionNum}px`;
+        }
+      }
+
+      if (checkTap) {
+        addNumMatrix();
+      }
+
+      updateData();
       break;
     }
     case "ArrowRight": {
+      for (let i = cellNums.length - 1; i >= 0; i--) {
+        let x = +cellNums[i].classList[1].split("-")[1];
+        let y = +cellNums[i].classList[1].split("-")[2];
+        let positionNum = 0;
+
+        while (y < 3) {
+          y++;
+
+          if (matrix[x][y] === 0) {
+            matrix[x][y] = matrix[x][y - 1];
+            matrix[x][y - 1] = 0;
+            positionNum += 115;
+            checkTap = true;
+          } else if (matrix[x][y] === matrix[x][y - 1]) {
+            matrix[x][y] *= 2;
+            matrix[x][y - 1] = 0;
+            positionNum += 115;
+            checkTap = true;
+            break;
+          } else {
+            break;
+          }
+        }
+
+        if (positionNum !== 0) {
+          cellNums[i].firstChild.style.left = `${positionNum}px`;
+        }
+      }
+
+      if (checkTap) {
+        addNumMatrix();
+      }
+
+      updateData();
       break;
     }
     case "Default": {
