@@ -12,8 +12,28 @@ const matrix = [
 ];
 
 const gameInit = () => {
-  addNumMatrix();
-  addNumMatrix();
+  // addNumMatrix();
+  // addNumMatrix();
+
+  matrix[0][0] = 2;
+  matrix[0][1] = 4;
+  matrix[0][2] = 0;
+  matrix[0][3] = 0;
+
+  matrix[1][0] = 2;
+  matrix[1][1] = 0;
+  matrix[1][2] = 8;
+  matrix[1][3] = 0;
+
+  matrix[2][0] = 0;
+  matrix[2][1] = 2;
+  matrix[2][2] = 8;
+  matrix[2][3] = 0;
+
+  matrix[3][0] = 4;
+  matrix[3][1] = 2;
+  matrix[3][2] = 0;
+  matrix[3][3] = 0;
 
   draftMatrix(game);
 
@@ -66,78 +86,96 @@ const updateData = () => {
   timeout = setTimeout(() => {
     game.innerHTML = "";
     draftMatrix(game);
-  }, 100);
+  }, 1000);
 
   () => clearTimeout(timeout);
 };
 
 const changeDirection = (e) => {
-  const cellNums = document.querySelectorAll(".cell-num");
-  let checkSlide = false;
+  const cellNums = [];
+  let checkTap = false;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix.length; j++) {
+      if (matrix[j][i] !== 0) {
+        const num = document.querySelector(`.cell-${j}-${i}`);
+
+        cellNums.push(num);
+      }
+    }
+  }
+
 
   switch (e.key) {
     case "ArrowUp": {
       for (let i = 0; i < cellNums.length; i++) {
-        let x = +cellNums[i].parentElement.classList[1].split("-")[1];
-        let y = +cellNums[i].parentElement.classList[1].split("-")[2];
+        let x = +cellNums[i].classList[1].split("-")[1];
+        let y = +cellNums[i].classList[1].split("-")[2];
+        
         let positionNum = 0;
-        let checkSum = false;
 
         while (x > 0) {
           x--;
 
           if (matrix[x][y] === 0) {
-            matrix[x][y] = +cellNums[i].innerHTML;
-          } else if (matrix[x][y] === matrix[x + 1][y] && !checkSum) {
+            matrix[x][y] = matrix[x + 1][y];
+            matrix[x + 1][y] = 0;
+            positionNum -= 115;
+            checkTap = true;
+          } else if (matrix[x][y] === matrix[x + 1][y]) {
             matrix[x][y] *= 2;
-            checkSum = true;
+            matrix[x + 1][y] = 0;
+            positionNum -= 115;
+            checkTap = true;
+            break;
           } else {
             break;
           }
-
-          checkSlide = true;
-          matrix[x + 1][y] = 0;
-          positionNum -= 115;
         }
 
-        cellNums[i].style.top = `${positionNum}px`;
+        if (positionNum !== 0) {
+          cellNums[i].firstChild.style.top = `${positionNum}px`;
+        }
       }
 
-      if (checkSlide) {
+      if (checkTap) {
         addNumMatrix();
       }
-      
+
       updateData();
       break;
     }
     case "ArrowDown": {
       for (let i = cellNums.length - 1; i >= 0; i--) {
-        let x = +cellNums[i].parentElement.classList[1].split("-")[1];
-        let y = +cellNums[i].parentElement.classList[1].split("-")[2];
+        let x = +cellNums[i].classList[1].split("-")[1];
+        let y = +cellNums[i].classList[1].split("-")[2];
         let positionNum = 0;
-        let checkSum = false;
 
         while (x < 3) {
           x++;
 
           if (matrix[x][y] === 0) {
-            matrix[x][y] = +cellNums[i].innerHTML;
-          } else if (matrix[x][y] === matrix[x - 1][y] && !checkSum) {
+            matrix[x][y] = matrix[x - 1][y];
+            matrix[x - 1][y] = 0;
+            positionNum += 115;
+            checkTap = true;
+          } else if (matrix[x][y] === matrix[x - 1][y]) {
             matrix[x][y] *= 2;
-            checkSum = true;
+            matrix[x - 1][y] = 0;
+            positionNum += 115;
+            checkTap = true;
+            break;
           } else {
             break;
           }
-
-          checkSlide = true;
-          matrix[x - 1][y] = 0;
-          positionNum += 115;
         }
 
-        cellNums[i].style.top = `${positionNum}px`;
+        if (positionNum !== 0) {
+          cellNums[i].firstChild.style.top = `${positionNum}px`;
+        }
       }
 
-      if (checkSlide) {
+      if (checkTap) {
         addNumMatrix();
       }
 
@@ -145,71 +183,9 @@ const changeDirection = (e) => {
       break;
     }
     case "ArrowLeft": {
-      for (let i = 0; i < cellNums.length; i++) {
-        let x = +cellNums[i].parentElement.classList[1].split("-")[1];
-        let y = +cellNums[i].parentElement.classList[1].split("-")[2];
-        let positionNum = 0;
-        let checkSum = false;
-
-        while (y > 0) {
-          y--;
-
-          if (matrix[x][y] === 0) {
-            matrix[x][y] = +cellNums[i].innerHTML;
-          } else if (matrix[x][y] === matrix[x][y + 1] && !checkSum) {
-            matrix[x][y] *= 2;
-            checkSum = true;
-          } else {
-            break;
-          }
-
-          checkSlide = true;
-          matrix[x][y + 1] = 0;
-          positionNum -= 115;
-        }
-
-        cellNums[i].style.left = `${positionNum}px`;
-      }
-
-      if (checkSlide) {
-        addNumMatrix();
-      }
-
-      updateData();
       break;
     }
     case "ArrowRight": {
-      for (let i = cellNums.length - 1; i >= 0; i--) {
-        let x = +cellNums[i].parentElement.classList[1].split("-")[1];
-        let y = +cellNums[i].parentElement.classList[1].split("-")[2];
-        let positionNum = 0;
-        let checkSum = false;
-
-        while (y < 3) {
-          y++;
-
-          if (matrix[x][y] === 0) {
-            matrix[x][y] = +cellNums[i].innerHTML;
-          } else if (matrix[x][y] === matrix[x][y - 1] && !checkSum) {
-            matrix[x][y] *= 2;
-            checkSum = true;
-          } else {
-            break;
-          }
-
-          checkSlide = true;
-          matrix[x][y - 1] = 0;
-          positionNum += 115;
-        }
-
-        cellNums[i].style.left = `${positionNum}px`;
-      }
-
-      if (checkSlide) {
-        addNumMatrix();
-      }
-
-      updateData();
       break;
     }
     case "Default": {
