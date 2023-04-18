@@ -1,5 +1,7 @@
 const app = document.querySelector("#app");
+const score = document.querySelector("#score");
 const game = document.createElement("div");
+let gameScore = 0;
 
 game.className = "app__game";
 app.appendChild(game);
@@ -122,6 +124,7 @@ const changeDirection = (e) => {
             if (checkLastSum) break;
           } else if (matrix[x][y] === matrix[x + 1][y]) {
             matrix[x][y] *= 2;
+            gameScore += matrix[x][y];
             matrix[x + 1][y] = '0';
             positionNum -= 115;
             checkTap = true;
@@ -159,6 +162,7 @@ const changeDirection = (e) => {
             checkTap = true;
           } else if (matrix[x][y] === matrix[x - 1][y]) {
             matrix[x][y] *= 2;
+            gameScore += matrix[x][y];
             matrix[x - 1][y] = 0;
             positionNum += 115;
             checkTap = true;
@@ -199,6 +203,7 @@ const changeDirection = (e) => {
             if (checkLastSum) break;
           } else if (matrix[x][y] === matrix[x][y + 1]) {
             matrix[x][y] *= 2;
+            gameScore += matrix[x][y];
             matrix[x][y + 1] = '0';
             positionNum -= 115;
             checkTap = true;
@@ -236,6 +241,7 @@ const changeDirection = (e) => {
             checkTap = true;
           } else if (matrix[x][y] === matrix[x][y - 1]) {
             matrix[x][y] *= 2;
+            gameScore += matrix[x][y];
             matrix[x][y - 1] = 0;
             positionNum += 115;
             checkTap = true;
@@ -262,6 +268,8 @@ const changeDirection = (e) => {
       break;
     }
   }
+
+  score.innerHTML = `Score: ${gameScore}`;
 };
 
 window.onload = gameInit;
