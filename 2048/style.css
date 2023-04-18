@@ -44,6 +44,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  color: #f9f6f2;
   transition: all 100ms ease-in-out;
 }
 
@@ -58,36 +59,41 @@
 }
 
 .cell-8 {
-  color: #f9f6f2;
   background-color: #f3b27a;
 }
 
 .cell-16 {
-  color: #f9f6f2;
   background: #f69664;
 }
 
 .cell-32 {
-  color: #f9f6f2;
   background: #f77c5f;
 }
 
 .cell-64 {
-  color: #f9f6f2;
   background: #f75f3b;
 }
 
 .cell-128 {
-  color: #f9f6f2;
   background: #edd073;
 }
 
 .cell-256 {
-  color: #f9f6f2;
   background: #edcc62;
 }
 
-.cell-512, .cell-1024, .cell-2048 {
-  color: #f9f6f2;
+.cell-512 {
   background: #edc950;
+}
+
+.cell-1024 {
+  background: #d0b045;
+}
+
+.cell-2048 {
+  background: #af933a;
+}
+
+.cell-4096 {
+  background: #3e3ed3;
 }

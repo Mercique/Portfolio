@@ -22,7 +22,7 @@ const gameInit = () => {
 
 const draftMatrix = (field) => {
   for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix.length; j++) {
+    for (let j = 0; j < matrix[i].length; j++) {
       const cell = document.createElement("div");
 
       cell.className = `app__game-cell cell-${i}-${j}`;
@@ -40,19 +40,23 @@ const draftMatrix = (field) => {
 };
 
 const addNumMatrix = () => {
-  while (true) {
-    let first = getRandomNumber(0, 3);
-    let second = getRandomNumber(0, 3);
-    let randomNum = getRandomNumber(1, 10);
+  const randomNum = getRandomNumber(1, 10);
+  const emptyCells = [];
 
-    if (matrix[first][second] === 0) {
-      if (randomNum > 2) {
-        matrix[first][second] = 2;
-      } else {
-        matrix[first][second] = 4;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] == 0) {
+        emptyCells.push([i, j]);
       }
-      break;
     }
+  }
+
+  const emptyRandom = getRandomNumber(0, emptyCells.length - 1);
+
+  if (randomNum !== 1) {
+    matrix[emptyCells[emptyRandom][0]][emptyCells[emptyRandom][1]] = 2;
+  } else {
+    matrix[emptyCells[emptyRandom][0]][emptyCells[emptyRandom][1]] = 4;
   }
 };
 
@@ -79,7 +83,7 @@ const getCollectionNums = (key) => {
   const collection = [];
 
   for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix.length; j++) {
+    for (let j = 0; j < matrix[i].length; j++) {
       let left = key === "ArrowUp" || "ArrowDown" ? i : j;
       let right = key === "ArrowLeft" || "ArrowRight" ? j : i;
 
